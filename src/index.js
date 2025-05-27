@@ -32,7 +32,7 @@ buttons.forEach((button) => {
         delete activeSlide.dataset.active;
 
         document.querySelector(".indicator.active")?.classList.remove("active");
-        indicatorsContainer.children[newIndex].classList.add("active");
+        indicatorsContainer.children[newIndex].dataset.activeIndicator = true;
     });
 });
 
@@ -67,5 +67,5 @@ const slides = document.querySelector("[data-slides]").children;
         indicator.dataset.activeIndicator = true;
     });
     // Ensure that on page load, the first indicator is active
-    indicatorsContainer.children[0].classList.add("active");
+    indicatorsContainer.children[0].dataset.activeIndicator = true;
 })
