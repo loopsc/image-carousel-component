@@ -19,7 +19,7 @@ section {
     position: relative;
 }
 
-.carousel > ul {
+.carousel > ul[data-slides] {
     margin: 0;
     padding: 0;
     list-style: none;
@@ -78,4 +78,31 @@ section {
 
 .carousel-button.next {
     right: 1rem;
+}
+
+[data-indicators] {
+    position: absolute;
+    bottom: 0.2rem;
+    left: 50%;
+    transform: translateX(-50%);
+    display: flex;
+    gap: 0.5rem;
+    z-index: 3;
+    background-color: rgba(0, 0, 0, 0.5);
+    padding: 10px;
+}
+
+.indicator {
+    width: 1rem;
+    height: 1rem;
+    border-radius: 50%;
+    border: none;
+    background-color: rgba(255, 255, 255, 0.5);
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.indicator[data-active-indicator],
+.indicator:hover {
+    background-color: white;
 }
